@@ -1,0 +1,32 @@
+body{
+    background-image: url("1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#fff{
+    background-color: #4ba72d94;
+    min-height: 650px;
+}
+
+.ppp{
+    color: #f7e50a;
+}
+
+.sss{
+    color: red;
+}
+
+.headss{
+    color: blue;
+}
+
+.headss:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+#agreterm{
+    color: #f7e50a;
+    cursor: pointer;
+}

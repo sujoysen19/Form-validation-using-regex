@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+    <link href="formstyles.css" rel="stylesheet">
+    <script type="text/javascript" src="sweetalert.min.js"></script>
+
+</head>
+<body>
+<!-- body code goes here -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8 offset-2" id="fff">
+
+            <h1 class="text-center"><u><b>Registration Form</b></u></h1>
+            <hr hr color="red">
+            <form onsubmit="return validation()">
+
+                <h4 class="ppp"><u>Personal details:</u></h4>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="text-white"><span class="sss">*</span>First Name:</label>
+                        <input type="text" name="" id="username1" size="15">
+                        <span id="usererror1" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="text-white">Middle Name:</label>
+                        <input type="text" name="" id="username2" size="15">
+                        <span id="usererror2" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="text-white"><span class="sss">*</span>Last Name:</label>
+                        <input type="text" name="" id="username3" size="15">
+                        <span id="usererror3" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="text-white"><span class="sss">*</span>Password:</label>
+                        <input type="password" name="" id="password" size="29">
+                        <span id="passworderror" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="text-white"><span class="sss">*</span>Confirm password:</label>
+                        <input type="text" name="" id="cpassword" size="29">
+                        <span id="cpassworderror" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <p class="text-white"><span class="sss">*</span>Select your gender:</p>
+                <label class="text-white">Male</label>&nbsp;<input type="radio" name="gen" value="male" id="m1">
+                <label class="text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Female</label>&nbsp;
+                <input type="radio" name="gen" value="female" id="f1">
+
+                <br><br>
+
+                <p class="text-white"><span class="sss">*</span>Select your known language:</p>
+                <label class="text-white">Bengali:&nbsp;</label><input type="checkbox" name="lang1" value="bengali" id="b1">
+                <label class="text-white">&nbsp;&nbsp;&nbsp;&nbsp;Hindi:&nbsp;</label><input type="checkbox" name="lang2" value="hindi" id="h1">
+                <label class="text-white">&nbsp;&nbsp;&nbsp;&nbsp;English:&nbsp;</label><input type="checkbox" name="lang3" value="english" id="e1">
+
+                <hr hr color="red">
+
+                <h4 class="ppp"><u>Contact details:</u></h4>
+                <br>
+
+                <label class="text-white"><span class="sss">*</span>Email:</label>
+                <input type="text" name="" id="email" size="70">
+                <span id="emailerror" class="text-danger font-weight-bold"></span>
+                <br><br>
+
+                <label class="text-white"><span class="sss">*</span>Mobile Number:</label>
+                <input type="text" name="" id="mobilenumber" size="60">
+                <span id="mobileerror" class="text-danger font-weight-bold"></span>
+                <br><br>
+
+                <p class="text-white"><span class="sss">*</span>In which country you want to do job:</p>
+                <select name="country" id="selcoun">
+                    <option>---Select country---</option>
+                    <option>India</option>
+                    <option>England</option>
+                    <option>U.S.A.</option>
+                </select><br><br><br><br><br>
+
+
+                <hr color="red">
+
+                <h4 class="ppp"><u>Present address details:</u></h4>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label class="text-white">Country:</label>
+                        <input type="text" name="" id="country" size="10">
+                        <span id="countryerror" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="text-white">State:</label>
+                        <input type="text" name="" id="state" size="10">
+                        <span id="stateerror" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="text-white">City:</label>
+                        <input type="text" name="" id="city" size="10">
+                        <span id="cityerror" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="text-white">Pin Code:</label>
+                        <input type="text" name="" id="pin" size="10">
+                        <span id="pinerror" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                </div>
+
+                <br>
+                <label class="text-white">Address:</label><br>
+                <textarea name="addr" id="address" cols="100" rows="3"></textarea>
+                <span id="addresserror" class="text-danger font-weight-bold"></span>
+                <br><br>
+
+
+                <hr color="red">
+
+                <h4 class="ppp"><u>Permanent address details:</u></h4>
+                <br>
+
+                <input type="checkbox" name="perma" value="permas" id="perma1" onclick="sameAddress()"><label class="text-white">&nbsp;: If this
+                address is same as present address click here.</label>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label class="text-white">Country:</label>
+                        <input type="text" name="" id="country1" size="10">
+                        <span id="countryerror1" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="text-white">State:</label>
+                        <input type="text" name="" id="state1" size="10">
+                        <span id="stateerror1" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="text-white">City:</label>
+                        <input type="text" name="" id="city1" size="10">
+                        <span id="cityerror1" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="text-white">Pin Code:</label>
+                        <input type="text" name="" id="pin1" size="10">
+                        <span id="pinerror1" class="text-danger font-weight-bold"></span>
+                    </div>
+
+                </div>
+
+                <br>
+                <label class="text-white">Address:</label><br>
+                <textarea name="addr" id="address1" cols="100" rows="3"></textarea>
+                <span id="addresserror1" class="text-danger font-weight-bold"></span>
+                <br><br>
+
+
+                <hr color="red">
+
+                <span class="sss">*</span><input type="checkbox" name="agrees" value="agree"><label class="text-white">&nbsp;:
+                I agree to the terms and conditions. To know it <span onclick='showagree()' id="agreterm">click here.</span>
+            </label>
+                <br><br>
+
+                <input type="image" name="save" src="submit.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript code link is start here-->
+<script type="text/javascript">
+
+
+    function validation() {
+
+        var username1 = document.getElementById('username1').value;
+        var username3 = document.getElementById('username3').value;
+        var password = document.getElementById('password').value;
+        var cpassword = document.getElementById('cpassword').value;
+        var email = document.getElementById('email').value;
+        var mobilenumber = document.getElementById('mobilenumber').value;
+
+
+        var usercheck1 = /^[A-Z ]{3,30}$/;
+        var usercheck3 = /^[A-Z ]{3,30}$/;
+        var passwordcheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]{8,16}$/;
+        var emailcheck = /^[A-Za-z0-9_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+        var mobilecheck = /^[0-9]{10}$/;
+
+
+
+        if (usercheck1.test(username1)) {
+            document.getElementById('usererror1').innerHTML = " ";
+        }
+        else {
+            document.getElementById('usererror1').innerHTML = "**Username is invalid**" + "<span onclick='showmessage()' class='headss'>Click here</span>";
+            return false;
+        }
+
+        if (usercheck3.test(username3)) {
+            document.getElementById('usererror3').innerHTML = " ";
+        }
+        else {
+            document.getElementById('usererror3').innerHTML = "**Username is invalid**" + "<span onclick='showmessage()' class='headss'>Click here</span>";
+            return false;
+        }
+
+
+        if (passwordcheck.test(password)) {
+            document.getElementById('passworderror').innerHTML = " ";
+        }
+        else {
+            document.getElementById('passworderror').innerHTML = "<br>**Password is invalid**" + "<span onclick='showmessage1()' class='headss'>Click here</span>";
+            return false;
+        }
+
+        if (cpassword.match(password)) {
+            document.getElementById('cpassworderror').innerHTML = " ";
+        }
+        else {
+            document.getElementById('cpassworderror').innerHTML = "<br>**Password is not match**";
+            return false;
+        }
+
+        if(m1.checked===false && f1.checked===false)
+        {
+            swal("Please select your gender");
+            return false;
+        }
+
+        if(document.getElementById('b1').checked===false &&document.getElementById('h1').checked===false &&document.getElementById('e1').checked===false)
+        {
+            swal("Please select your known language");
+            return false;
+        }
+
+
+        if (emailcheck.test(email)) {
+            document.getElementById('emailerror').innerHTML = " ";
+        }
+        else {
+            document.getElementById('emailerror').innerHTML = "**Email is invalid**";
+            return false;
+        }
+
+        if (mobilecheck.test(mobilenumber)) {
+            document.getElementById('mobileerror').innerHTML = " ";
+        }
+        else {
+            document.getElementById('mobileerror').innerHTML = "**Mobile number is invalid**";
+            return false;
+        }
+
+        if(document.getElementById('selcoun').value==="---Select country---" )
+        {
+            swal("please select your country");
+            return false;
+        }
+
+
+
+
+
+    }
+
+
+    <!-- permanent address is started-->
+
+
+
+
+    function sameAddress() {
+        if (perma1.checked === true)
+        {
+            country1.value =country.value;
+        }
+
+        if (perma1.checked === true)
+        {
+            state1.value =state.value;
+        }
+
+        if (perma1.checked === true)
+        {
+            city1.value =city.value;
+        }
+
+        if (perma1.checked === true)
+        {
+            pin1.value =pin.value;
+        }
+
+        if (perma1.checked === true)
+        {
+            address1.value =address.value;
+        }
+
+
+    }
+    <!-- Permanent address is ended -->
+
+    function showmessage() {
+        swal("Name must be in capital letters only");
+    }
+
+    function showmessage1() {
+        swal("Password must contain atleast one number, one special character, one small letter and one capital lettter and the length of password must be within 8 to 16");
+    }
+
+    function showagree() {
+        swal("Terms and conditions", "On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. When you create pictures, charts, or diagrams, they also coordinate with your current document look.\n" +
+            "You can easily change the formatting of selected text in the document text by choosing a look for the selected text from the Quick Styles gallery on the Home tab. You can also format text directly by using the other controls on the Home tab. Most controls offer a choice of using the look from the current theme or using a format that you specify directly.\n" +
+            "To change the overall look of your document, choose new Theme elements on the Page Layout tab. To change the looks available in the Quick Style gallery, use the Change Current Quick Style Set command. Both the Themes gallery and the Quick Styles gallery provide reset commands so that you can always restore the look of your document to the original contained in your current template.\n");
+    }
+
+
+
+
+
+
+</script>
+<!-- JavaScript code link is end here-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.3.1.js"></script>
+</body>
+</html>
